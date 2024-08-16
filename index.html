@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot Creator API Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>AI Chatbot Creator API Documentation</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#authentication">Authentication</a></li>
+            <li><a href="#endpoints">Endpoints</a></li>
+            <li><a href="#error-handling">Error Handling</a></li>
+            <li><a href="#rate-limiting">Rate Limiting</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>The AI Chatbot Creator API provides a set of endpoints to manage user authentication, process URLs to extract text content, interact with the AI chatbot, and manage API keys for chatbot integration. This documentation outlines the available endpoints, request/response formats, and error handling.</p>
+        </section>
+        <section id="authentication">
+            <h2>Authentication</h2>
+            <p>All API endpoints require authentication. Users must register and log in to obtain a session token, which should be included in the request headers for authenticated endpoints.</p>
+        </section>
+        <section id="endpoints">
+            <h2>Endpoints</h2>
+            <article id="user-registration">
+                <h3>User Registration</h3>
+                <p><strong>Endpoint:</strong> <code>POST /register</code></p>
+                <p><strong>Description:</strong> Register a new user.</p>
+                <h4>Request Body:</h4>
+                <pre><code>{
+    "email": "user@example.com",
+    "password": "secure_password"
+}</code></pre>
+                <h4>Response:</h4>
+                <pre><code>{
+    "message": "User registered successfully"
+}</code></pre>
+            </article>
+            <!-- Repeat similar structure for other endpoints -->
+        </section>
+        <section id="error-handling">
+            <h2>Error Handling</h2>
+            <p>The API uses standard HTTP status codes to indicate the success or failure of a request. Common status codes include:</p>
+            <ul>
+                <li><code>200 OK</code>: The request was successful.</li>
+                <li><code>201 Created</code>: The resource was successfully created.</li>
+                <li><code>400 Bad Request</code>: The request was invalid or malformed.</li>
+                <li><code>401 Unauthorized</code>: Authentication failed or user does not have permissions for the requested operation.</li>
+                <li><code>404 Not Found</code>: The requested resource was not found.</li>
+                <li><code>500 Internal Server Error</code>: An error occurred on the server.</li>
+            </ul>
+            <p>Error responses will include a JSON object with an <code>error</code> key describing the issue:</p>
+            <pre><code>{
+    "error": "Invalid API key"
+}</code></pre>
+        </section>
+        <section id="rate-limiting">
+            <h2>Rate Limiting</h2>
+            <p>To prevent abuse and ensure fair usage, the API implements rate limiting. The default limits are set to 2000 requests per day and 1000 requests per hour. Exceeding these limits will result in a <code>429 Too Many Requests</code> status code.</p>
+        </section>
+        <section id="conclusion">
+            <h2>Conclusion</h2>
+            <p>The AI Chatbot Creator API offers a robust set of endpoints to manage user accounts, process URLs, interact with AI chatbots, and manage API keys. By following this documentation, developers can integrate the API into their applications to create, deploy, and manage AI-powered chatbots seamlessly.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 AI Chatbot Creator. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
